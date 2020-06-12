@@ -19,7 +19,7 @@ function ContextSample() {
   const [value, setValue] = useState(true);
   return (
     <MyContext.Provider value={value ? "GOOD" : "BAD"}>
-      <GrandParent text="GOOD" />
+      <GrandParent />
       <button onClick={() => setValue(!value)}>CLICK ME</button>
     </MyContext.Provider>
       

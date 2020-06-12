@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import {UserDispatch} from './App';
 
 const User = React.memo(function User({ user }) {
@@ -17,8 +17,14 @@ const User = React.memo(function User({ user }) {
           color: active ? 'green' : 'black',
           cursor: 'pointer'
       }}
-      onClick={() => dispatch}>{ username }</b> <span> { email }</span>
-      <button onClick={() => }>삭제</button>
+      onClick={() => dispatch({
+        type: 'TOGGLE_USER',
+        id
+      })}>{ username }</b> <span> { email }</span>
+      <button onClick={() => dispatch({
+        type: 'REMOVE_USER',
+        id
+      })}>삭제</button>
     </div>
   );
 });
