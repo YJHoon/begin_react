@@ -10,7 +10,6 @@ function countActiveUsers(users){
   console.log('활성화 수')
   return users.filter(user => user.active).length
 }
-
 const initialState = {
   users: [
     {
